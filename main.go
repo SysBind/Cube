@@ -112,7 +112,18 @@ func main() {
 	ambLight := light.NewAmbient(&math32.Color{R: 1.0, G: 1.0, B: 1.0}, 0.4)
 	scene.Add(ambLight)
 
-	for {
+	//now := time.Now()
+	//newNow := time.Now()
+	log.Info("Starting Render Loop")
+
+	// Start the render loop
+	for !win.ShouldClose() {
+
+		//newNow = time.Now()
+		//timeDelta := now.Sub(newNow)
+		//now = newNow
+
+		//Update(timeDelta.Seconds())
 		RenderFrame(root, renderer, camera, wmgr, win)
 	}
 }
